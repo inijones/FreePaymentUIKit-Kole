@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:freepaymentuikit_kole/configs/theme.dart';
-import 'package:freepaymentuikit_kole/features/home_screen.dart';
+import 'package:freepaymentuikit_kole/features/views/home_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

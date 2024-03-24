@@ -156,13 +156,15 @@ class TotalSpendingWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             RobotoText(
               text: "Total Spending",
-              fontWeight: FontWeight.bold,
-              fontSize: 10.sp,
+              fontWeight: FontWeight.w400,
+              fontSize: 12.sp,
               textColor: FreePaymentUIColors.neutral50,
             ),
             RobotoText(

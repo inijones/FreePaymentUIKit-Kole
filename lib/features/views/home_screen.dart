@@ -4,10 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:freepaymentuikit_kole/components/bottom_app_bar.dart';
 import 'package:freepaymentuikit_kole/constants/asset_path.dart';
 import 'package:freepaymentuikit_kole/constants/colors.dart';
-import 'package:freepaymentuikit_kole/features/activity_screen.dart';
-import 'package:freepaymentuikit_kole/features/home_page.dart';
-import 'package:freepaymentuikit_kole/features/my_card_screen.dart';
-import 'package:freepaymentuikit_kole/features/profile_screen.dart';
+import 'package:freepaymentuikit_kole/features/views/activity_screen.dart';
+import 'package:freepaymentuikit_kole/features/views/home_page.dart';
+import 'package:freepaymentuikit_kole/features/views/my_card_screen.dart';
+import 'package:freepaymentuikit_kole/features/views/profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -54,7 +54,6 @@ class _HomeScreenState extends State<HomeScreen> {
               AssetPath.cardIcon,
               'Card',
             ),
-
             CustomBottomAppBarItem(
               AssetPath.activityIcon,
               'Activity',

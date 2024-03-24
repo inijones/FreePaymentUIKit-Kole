@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../constants/colors.dart';
 
 ThemeData theme() {
@@ -40,22 +39,8 @@ ThemeData theme() {
         ),
       ),
     ),
-    inputDecorationTheme: InputDecorationTheme(
-      hintStyle: TextStyle(
-        color: FreePaymentUIColors.neutral80,
-        fontFamily: 'Roboto',
-        fontSize: 14.sp,
-        fontWeight: FontWeight.w400,
-      ),
-      enabledBorder: OutlineInputBorder(
-        borderSide: const BorderSide(
-          width: 1,
-          color: FreePaymentUIColors.neutral80,
-        ),
-        borderRadius: BorderRadius.all(
-          Radius.circular(16.r),
-        ),
-      ),
+    bottomAppBarTheme: const BottomAppBarTheme(
+      color: FreePaymentUIColors.backgroundColor,
     ),
   );
 }

@@ -87,7 +87,8 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
 
     return SizedBox(
       child: BottomAppBar(
-        elevation: 8,
+        color: Colors.white,
+        elevation: 0,
         child: Padding(
           padding: EdgeInsets.only(
             bottom: 8.0.h,

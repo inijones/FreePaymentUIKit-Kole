@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:freepaymentuikit_kole/components/text_widget.dart';
@@ -130,45 +128,95 @@ class CardScrollWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 64.h,
-      width: 316.w,
-      child: Stack(
-        children: [
-          Image.asset(bgAssetPath ?? AssetPath.greenBg),
-          Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: 15.w,
-              vertical: 5.h,
+    return Padding(
+      padding: EdgeInsets.only(right: 20.0.w),
+      child: SizedBox(
+        height: 64.h,
+        width: 300.w,
+        child: Stack(
+          children: [
+            Image.asset(
+              bgAssetPath ?? AssetPath.greenBg,
+              fit: BoxFit.cover,
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    RobotoText(
-                      text: text ?? "Co.payment Cards",
-                      fontWeight: FontWeight.w700,
-                    ),
-                    Row(
-                      children: [
-                        const RobotoText(text: "**** 1121"),
-                        SizedBox(width: 15.w),
-                        Image.asset(
-                          AssetPath.mastercardIcon,
-                          height: 24.h,
-                          width: 40.w,
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ],
+            Padding(
+              padding: EdgeInsets.only(
+                left: 25.w,
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Row(
+                    children: [
+                      RobotoText(
+                        text: text ?? "Co.payment Cards",
+                        fontWeight: FontWeight.w700,
+                        fontSize: 14.sp,
+                      ),
+                      SizedBox(width: 30.w),
+                      Row(
+                        children: [
+                          RobotoText(
+                            text: "**** 1121",
+                            fontSize: 14.sp,
+                          ),
+                          SizedBox(width: 5.w),
+                          Image.asset(
+                            AssetPath.mastercardIcon,
+                            height: 24.h,
+                            width: 40.w,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
+    );
+  }
+}
+
+class FilterWidget extends StatelessWidget {
+  const FilterWidget({
+    super.key,
+    required this.width,
+    required this.index,
+    required this.currentIndex,
+    required this.label,
+    required this.onTap,
+  });
+
+  final double width;
+  final int index;
+  final int currentIndex;
+  final String label;
+  final Function(int index) onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      child: Container(
+        padding: EdgeInsets.all(8.0.sp),
+        decoration: BoxDecoration(
+            color: currentIndex == 1
+                ? FreePaymentUIColors.neutral40.withOpacity(0.06)
+                : null,
+            borderRadius: BorderRadius.circular(10)),
+        child: RobotoText(
+          text: label,
+          fontSize: 12.sp,
+          textColor:
+              currentIndex == 1 ? Colors.black : FreePaymentUIColors.neutral60,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      onTap: () {
+        onTap(index);
+      },
     );
   }
 }
